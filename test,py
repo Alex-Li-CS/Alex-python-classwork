@@ -1,0 +1,8 @@
+z = 0
+while True:
+    x = float(input("Enter your number here"))
+    if x >= 0:
+        z += x
+    else:
+        break
+print(z)
