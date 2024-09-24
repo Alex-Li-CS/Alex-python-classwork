@@ -1,0 +1,50 @@
+<!-- Copyright (C) 2016 PG Online Ltd -->
+
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+	<title>Roll the dice</title>
+	<style>
+		body, input { font-family: Arial, Helvetica, "sans-serif"; font-size: 15px; }
+		body { text-align:center; }
+	</style>
+
+
+</head>
+
+<body>
+<h1>Dice Roll</h1>
+
+
+<form name = "Place">
+<div id="diceImage"> </div> <!-- Empty div to contain random dice image -->
+<button id = "btn" type = "button"
+Onclick="placeDice();">Submit the dice</button>
+<p> id = "box">Input your dice choice here
+</p>
+<input type = "text" name="number" >
+</form>
+
+<script>
+function validate() {
+	var x = document.forms["number"].value;
+	if (6<x) {
+		document.getElementById("box").style.color = "red";
+	else if (x<1) {
+		document.getElementById("box").style.color = "red";
+	}
+	}
+}	
+function rollDice(){
+	var dice = ["Roll1.jpeg","Roll2.jpeg","Roll3.jpeg","Roll4.jpeg","Roll5.jpeg","Roll6.jpeg"];
+	var roll = Math.ceil(Math.random() * dice.length);
+	roll--; // Javascript indexes start at 0 - the count is 6 items, so subtract 1 to get item in range 0-5
+	document.getElementById("diceImage").innerHTML="<img src='"+dice[roll]+"'>";
+	document.getElementByID('btn').innerHTML = "Player 2 Roll the dice";
+}
+rollDice();
+</script>
+
+</body>
+</html>
+

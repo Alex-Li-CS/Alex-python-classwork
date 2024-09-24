@@ -10,3 +10,4 @@ if a:
     total = sum(a)
     average = total // len(a)
     print(average)
+
