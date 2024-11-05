@@ -1,3 +1,4 @@
+### SRC - Good effort, can you get the sun to travel from East to West?
 import pygame
 
 # Define some colors
