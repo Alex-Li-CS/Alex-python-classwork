@@ -1,0 +1,9 @@
+def dequeue():
+  max_size = int(input())
+  if size == 0:
+    print("Queue is empty")
+  else:
+    front += 1
+    front = front % max_size
+    size -= 1
+  

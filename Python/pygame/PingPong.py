@@ -33,6 +33,19 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
+    ### SRC - Moved and indented from below.
+    # CONTROLS
+    # Bouncer RIGHT
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                bouncer_righty -= 4
+            if event.key == pygame.K_DOWN:
+                bouncer_righty += 4
+            if event.key == pygame.K_w:
+                bouncer_lefty -= 4
+            if event.key == pygame.K_s:
+                bouncer_lefty += 4
+
  
     # --- Game logic should go here
     # Velocity
@@ -54,17 +67,6 @@ while not done:
     if 5<= ball_x <= 20 and bouncer_righty <= ball_y >= bouncer_righty + 180:
         velocity_x = velocity_x * -1
     
-    # CONTROLS
-    # Bouncer RIGHT
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_UP:
-            bouncer_righty -= 4
-        if event.key == pygame.K_DOWN:
-            bouncer_righty += 4
-        if event.key == pygame.K_w:
-            bouncer_lefty -= 4
-        if event.key == pygame.K_s:
-            bouncer_lefty += 4
 
 
     screen.fill(BLACK)
